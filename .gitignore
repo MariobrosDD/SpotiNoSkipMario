@@ -1,0 +1,15 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+
+# Build
+build/
+dist/
+
+# PyInstaller
+*.spec
+
+# Local data
+session.json
+users.db

@@ -1,0 +1,35 @@
+{
+  "permissions": {
+    "allow": [
+      "PowerShell($path = \"c:\\\\Users\\\\mario.sanchez\\\\Desktop\\\\Aplicaciones Claude Mario\\\\Music\"; $items = @\\(Get-ChildItem -Path $path -Force -ErrorAction SilentlyContinue\\); if \\($items.Count -eq 0\\) { \"Directory is empty or contains no accessible items\" } else { $items | ForEach-Object { $_.FullName } })",
+      "PowerShell($path = \"C:\\\\Users\\\\mario.sanchez\\\\Desktop\\\\Aplicaciones Claude Mario\\\\Music\"; Get-Item -Path $path -Force | Select-Object Name, @{N='IsEmpty';E={@\\(Get-ChildItem -Path $_.FullName -Force\\).Count -eq 0}})",
+      "PowerShell($path = \"C:\\\\Users\\\\mario.sanchez\\\\Desktop\\\\Aplicaciones Claude Mario\\\\Music\"; Write-Host \"Directory: $path\"; Write-Host \"Exists: $\\(Test-Path $path\\)\"; $items = Get-ChildItem -Path $path -Force; Write-Host \"Item count: $\\($items.Count\\)\"; if \\($items.Count -eq 1 -and $items[0].Name -eq '.claude'\\) { Write-Host \"WARNING: Only .claude directory found, no source files\"; $items | Format-Table Name, @{N='Type';E={if\\($_.PSIsContainer\\){'Dir'}else{'File'}}}, Length -AutoSize } else { $items | ForEach-Object { \"  $\\($_.Name\\) - $\\($_.GetType\\(\\).Name\\)\" } })",
+      "Bash(pip --version)",
+      "Bash(python -m pip --version)",
+      "Bash(python -m pip show PyQt6)",
+      "Bash(python -m pip show PyQt6 mutagen pillow python-vlc)",
+      "Bash(python -m pip install PyQt6 mutagen Pillow)",
+      "Bash(python -c ' *)",
+      "Bash(ffmpeg -version)",
+      "PowerShell(ffmpeg *)",
+      "PowerShell(winget list *)",
+      "PowerShell(Get-ChildItem *)",
+      "PowerShell(Get-Command *)",
+      "Bash(rename *)",
+      "PowerShell(Rename-Item *)",
+      "Bash(python -c \"from PyQt6.QtWidgets import QApplication; app = QApplication\\([]\\); from src.ui.main_window import MainWindow; print\\('OK'\\)\")",
+      "Bash(python -m pip install pyinstaller)",
+      "Bash(python -m PyInstaller spotify_skip_permissions.spec --noconfirm)",
+      "Bash(python -m pip install numpy)",
+      "Bash(powershell *)",
+      "Bash(python -m py_compile src/auth/auth_manager.py src/ui/login_window.py src/ui/register_window.py src/ui/styles.py main.py)",
+      "Bash(start pythonw *)",
+      "Bash(python -m py_compile src/auth/auth_manager.py src/ui/sidebar.py src/ui/main_window.py main.py)",
+      "Bash(pip install *)",
+      "Bash(git init *)",
+      "Bash(git remote *)",
+      "Bash(git add *)",
+      "Bash(git commit -m ' *)"
+    ]
+  }
+}
